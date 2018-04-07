@@ -118,7 +118,7 @@ public abstract class NavigationApplication extends Application implements React
      */
     @Nullable
     public String getJSMainModuleName() {
-        return null;
+        return "index"; // required for new React Native version
     }
 
     /**
