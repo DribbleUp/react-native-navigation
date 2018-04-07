@@ -41,7 +41,7 @@ import com.reactnativenavigation.screens.Screen;
 import com.reactnativenavigation.utils.OrientationHelper;
 import com.reactnativenavigation.utils.ReflectionUtils;
 import com.reactnativenavigation.views.SideMenu.Side;
-
+import com.reactnativenavigation.params.Orientation;
 import java.util.List;
 
 public class NavigationActivity extends AppCompatActivity implements DefaultHardwareBackBtnHandler, Subscriber, PermissionAwareActivity {
@@ -83,7 +83,8 @@ public class NavigationActivity extends AppCompatActivity implements DefaultHard
     }
 
     private void setOrientation() {
-        OrientationHelper.setOrientation(this, AppStyle.appStyle.orientation);
+       // OrientationHelper.setOrientation(this, AppStyle.appStyle.orientation);
+        OrientationHelper.setOrientation(this, Orientation.Landscape); // Override landscape only
     }
 
     private void disableActivityShowAnimationIfNeeded() {

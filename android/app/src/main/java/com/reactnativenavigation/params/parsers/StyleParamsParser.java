@@ -125,7 +125,7 @@ public class StyleParamsParser {
         result.titleBarDisabledButtonColor = getTitleBarDisabledButtonColor();
         result.topBarElevationShadowEnabled = true;
         result.titleBarHideOnScroll = false;
-        result.orientation = Orientation.auto;
+        result.orientation = Orientation.Landscape; // set default to Landscape
         result.bottomTabFontFamily = new StyleParams.Font();
         result.bottomTabFontSize = 10;
         result.bottomTabSelectedFontSize = 10;
