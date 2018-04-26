@@ -2,7 +2,9 @@ package com.reactnativenavigation.controllers;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 
 import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.Promise;
@@ -38,7 +40,12 @@ class ModalController implements ScreenStackContainer, Modal.OnModalDismissedLis
 
     void showModal(ScreenParams screenParams) {
         Modal modal = new Modal(activity, this, screenParams);
+        // Needed to make it Immersive, full screen
+        modal.getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
         modal.show();
+        // Needed to make it Immersive Full screen
+        modal.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+        modal.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
         stack.add(modal);
     }
 
