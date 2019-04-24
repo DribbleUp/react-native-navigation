@@ -83,8 +83,7 @@ public class NavigationActivity extends AppCompatActivity implements DefaultHard
     }
 
     private void setOrientation() {
-       // OrientationHelper.setOrientation(this, AppStyle.appStyle.orientation);
-        OrientationHelper.setOrientation(this, Orientation.Landscape); // Override landscape only
+       OrientationHelper.setOrientation(this, AppStyle.appStyle.orientation);
     }
 
     private void disableActivityShowAnimationIfNeeded() {
